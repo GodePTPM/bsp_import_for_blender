@@ -1,3 +1,5 @@
+## BSP files importer for Blender
+
 # How to use ?    
 
 ## For RBSP files ( SoF2, JK2, JA )
