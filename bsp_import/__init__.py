@@ -6,7 +6,7 @@ from bpy.props import StringProperty
 
 from bpy.types import Operator
 
-from .rbsp import *
+from .bsp import *
 
 bl_info = {
     'name': 'Binary Space Partitioning (.bsp)',
@@ -17,11 +17,11 @@ bl_info = {
     'location': 'File > Import-Export',
     'description': 'Import .bsp files in Blender'
 }
-
-class import_rbsp(Operator, ImportHelper):
-    bl_idname = 'import_rbsp.scene'
-    bl_description = 'Import Raven\'s .bsp File'
-    bl_label = 'RBSP'
+    
+class import_bsp(Operator, ImportHelper):
+    bl_idname = 'import_bsp.scene'
+    bl_description = 'Import .bsp File'
+    bl_label = 'Binary Space Partitioning (.bsp)'
 
     filename_ext = '.bsp'
 
@@ -33,28 +33,20 @@ class import_rbsp(Operator, ImportHelper):
 
     def execute(self, context):
         print('Loading .bsp file {file_path}..')
-        return parse_rbsp(self.filepath)
+        return parse_bsp(self.filepath)
 
-class import_menu(bpy.types.Menu):
-    bl_label = 'Binary Space Partitioning (.bsp)'
-
-    def draw(self, context):
-        self.layout.operator(import_rbsp.bl_idname, text=import_rbsp.bl_label)
-
-def menu_func_import(self, context):
-    self.layout.menu('import_menu', text='Binary Space Partitioning (.bsp)')
+def menu_bsp_import(self, context):
+    self.layout.operator(import_bsp.bl_idname, text=import_bsp.bl_label)
 
 
 def register():
-    bpy.utils.register_class(import_rbsp)
-    bpy.utils.register_class(import_menu)
-    bpy.types.TOPBAR_MT_file_import.append(menu_func_import)
+    bpy.utils.register_class(import_bsp)
+    bpy.types.TOPBAR_MT_file_import.append(menu_bsp_import)
 
 
 def unregister():
-    bpy.utils.unregister_class(import_rbsp)
-    bpy.utils.unregister_class(import_menu)
-    bpy.types.TOPBAR_MT_file_import.remove(menu_func_import)
+    bpy.utils.unregister_class(import_bsp)
+    bpy.types.TOPBAR_MT_file_import.remove(menu_bsp_import)
 
 if __name__ == '__main__':
     register()
