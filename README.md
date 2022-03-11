@@ -35,7 +35,7 @@ Textures have to be downloaded and placed inside the .bsp file directory because
 | Team Fortress Classic | ✅ | BSPv30 | TBA
 | Gunman Chronicles  | ✅ | BSPv30 | TBA
 | James Bond 007: Nightfire  | ✅ | BSPv30 | TBA
-| James Bond 007: Ricochet  | ✅ | BSPv30 | TBA
+| Ricochet  | ✅ | BSPv30 | TBA
 | Deathmatch Classic  | ✅ | BSPv30 | TBA
 | Day Of Defeat  | ✅ | BSPv30 | TBA
 | Soldier of Fortune 2 | ✅ | RBSP | [Download](http://51.83.79.197/sof2_textures.tar.gz)
